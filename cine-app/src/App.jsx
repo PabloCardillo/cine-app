@@ -1,35 +1,40 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom';
+import { AuthProvider } from './context/AuthContext';
+//import Navbar from './components/Navbar';
+//import Home from './pages/Home';
+import Peliculas from './pages/Peliculas';
+import Funciones from './pages/Funciones';
+import Usuarios from './pages/Usuarios';
+import Reservas from './pages/Reservas';
+import Login from './pages/Login';
+import ProtectedRoute from './components/ProtectedRoute';
 
 function App() {
-  const [count, setCount] = useState(0)
-
   return (
-    <>
-      <div>
-        <a href="https://vite.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
-  )
+    <AuthProvider>
+      <BrowserRouter>
+      {/* <Navbar /> */}
+        <div className='container'>
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="/login" element={<Login />} />
+            {/* Rutas protegidas por rol */}
+            <Route element={<ProtectedRoute roles={['admin', 'superadmin']} />}>
+              <Route path="/peliculas/*" element={<Peliculas />} />
+              <Route path="/funciones/*" element={<Funciones />} />
+            </Route>
+            <Route element={<ProtectedRoute roles={['superadmin']} />}>
+              <Route path="/usuarios/*" element={<Usuarios />} />
+            </Route>
+            <Route element={<ProtectedRoute roles={['cliente']} />}>
+              <Route path="/reservas/*" element={<Reservas />} />
+            </Route>
+            <Route path="*" element={<Navigate to="/" />} />
+          </Routes>
+        </div>
+      </BrowserRouter>
+    </AuthProvider>
+  );
 }
 
-export default App
+export default App;
