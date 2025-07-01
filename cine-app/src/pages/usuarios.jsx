@@ -8,7 +8,7 @@ export default function Usuarios() {
   const agregarUsuario = (user) => setUsuarios([...usuarios, { ...user, id: Date.now() }]);
 
   return (
-    <div>
+    <div className='container mt-5'>
       <h1>Gestión de Usuarios</h1>
       <UsuarioForm onSubmit={agregarUsuario} />
       <UsuarioList usuarios={usuarios} />

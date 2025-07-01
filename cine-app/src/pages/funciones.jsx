@@ -8,7 +8,7 @@ export default function Funciones() {
   const agregarFuncion = (func) => setFunciones([...funciones, { ...func, id: Date.now() }]);
 
   return (
-    <div>
+    <div className="container">
       <h1>Gestión de Funciones</h1>
       <FuncionForm onSubmit={agregarFuncion} />
       <FuncionList funciones={funciones} />
