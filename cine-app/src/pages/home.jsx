@@ -25,13 +25,12 @@ export default function Home() {
             <li>Lunes a Viernes: 16:00 a 23:00</li>
             <li>Sábados y Domingos: 12:00 a 01:00</li>
           </ul>
-          <h3 className="mt-4">Síguenos</h3>
         </div>
       </div>
 
       <div className="text-center mb-5">
         <h4>¿Tienes dudas?</h4>
-        <p>Visita nuestra sección de <Link to="/faq">Preguntas Frecuentes</Link> o contáctanos.</p>
+        <p>Visita nuestra sección de Preguntas Frecuentes o contáctanos.</p>
       </div>
 
       {/* Preguntas Frecuentes */}
