@@ -26,12 +26,6 @@ export default function Home() {
             <li>Sábados y Domingos: 12:00 a 01:00</li>
           </ul>
           <h3 className="mt-4">Síguenos</h3>
-          <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" className="me-3">
-            <i className="bi bi-facebook" style={{ fontSize: 24 }}></i>
-          </a>
-          <a href="https://instagram.com" target="_blank" rel="noopener noreferrer">
-            <i className="bi bi-instagram" style={{ fontSize: 24 }}></i>
-          </a>
         </div>
       </div>
 
@@ -43,56 +37,24 @@ export default function Home() {
       {/* Preguntas Frecuentes */}
       <div className="mb-5">
         <h3 className="mb-3 text-primary">Preguntas Frecuentes</h3>
-        <div className="accordion" id="faqAccordion">
-          <div className="accordion-item">
-            <h2 className="accordion-header" id="faq1">
-              <button className="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse1">
-                ¿Cómo reservo una entrada?
-              </button>
-            </h2>
-            <div id="collapse1" className="accordion-collapse collapse show" data-bs-parent="#faqAccordion">
-              <div className="accordion-body">
-                Debes iniciar sesión, ir a la sección <strong>Reservar</strong>, elegir la película, función y cantidad de entradas, y luego realizar el pago.
-              </div>
-            </div>
-          </div>
-          <div className="accordion-item">
-            <h2 className="accordion-header" id="faq2">
-              <button className="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse2">
-                ¿Puedo cancelar o cambiar mi reserva?
-              </button>
-            </h2>
-            <div id="collapse2" className="accordion-collapse collapse" data-bs-parent="#faqAccordion">
-              <div className="accordion-body">
-                Las reservas no se pueden cancelar ni modificar desde la web. Para consultas, comunícate con nosotros por teléfono o email.
-              </div>
-            </div>
-          </div>
-          <div className="accordion-item">
-            <h2 className="accordion-header" id="faq3">
-              <button className="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse3">
-                ¿Cómo recibo mi entrada?
-              </button>
-            </h2>
-            <div id="collapse3" className="accordion-collapse collapse" data-bs-parent="#faqAccordion">
-              <div className="accordion-body">
-                Al finalizar el pago, verás tu entrada digital con un código único. Preséntalo en la boletería para ingresar.
-              </div>
-            </div>
-          </div>
-          <div className="accordion-item">
-            <h2 className="accordion-header" id="faq4">
-              <button className="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse4">
-                ¿Qué métodos de pago aceptan?
-              </button>
-            </h2>
-            <div id="collapse4" className="accordion-collapse collapse" data-bs-parent="#faqAccordion">
-              <div className="accordion-body">
-                Aceptamos tarjetas de crédito y débito Visa, Mastercard y MercadoPago.
-              </div>
-            </div>
-          </div>
-        </div>
+        <ul className="list-group list-group-flush">
+          <li className="list-group-item">
+            <strong>¿Cómo reservo una entrada?</strong><br />
+            Debes iniciar sesión, ir a la sección <strong>Reservar</strong>, elegir la película, función y cantidad de entradas, y luego realizar el pago.
+          </li>
+          <li className="list-group-item">
+            <strong>¿Puedo cancelar o cambiar mi reserva?</strong><br />
+            Las reservas no se pueden cancelar ni modificar desde la web. Para consultas, comunícate con nosotros por teléfono o email.
+          </li>
+          <li className="list-group-item">
+            <strong>¿Cómo recibo mi entrada?</strong><br />
+            Al finalizar el pago, verás tu entrada digital con un código único. Preséntalo en la boletería para ingresar.
+          </li>
+          <li className="list-group-item">
+            <strong>¿Qué métodos de pago aceptan?</strong><br />
+            Aceptamos tarjetas de crédito y débito Visa, Mastercard y MercadoPago.
+          </li>
+        </ul>
       </div>
     </div>
   );
